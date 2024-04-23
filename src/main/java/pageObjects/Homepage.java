@@ -16,6 +16,7 @@ public class Homepage {
     By toggle = By.cssSelector(".toggle");
     By testStoreLink = By.linkText("TEST STORE");
     By cookie = By.cssSelector(".close-cookie-warning > span");
+    By sidebarInactive = By.xpath("//div[@class='inactive']");
 
     public WebElement getToggle(){
         return driver.findElement(toggle);
@@ -25,5 +26,8 @@ public class Homepage {
     }
     public WebElement getCookie() throws IOException {
         return driver.findElement(cookie);
+    }
+    public WebElement getSidebarInactive(){
+        return driver.findElement(sidebarInactive);
     }
 }
