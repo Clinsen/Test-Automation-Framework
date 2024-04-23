@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +40,15 @@ public class AddRemoveItemBasketTest extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         home.getCookie().click();
+
+        if(home.getSidebarInactive().isEnabled()){
+            home.getToggle().click();
+        }
+
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
+
+        wait.until(ExpectedConditions.elementToBeClickable(home.getTestStoreLink()));
         home.getTestStoreLink().click();
 
         StoreHomepage storeHome = new StoreHomepage(driver);
@@ -49,6 +59,7 @@ public class AddRemoveItemBasketTest extends BasePage{
         productPage.getAddToCartBtn().click();
 
         StoreContentPanel contentPanel = new StoreContentPanel(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(contentPanel.getContinueShoppingBtn()));
         contentPanel.getContinueShoppingBtn().click();
 
         Select option = new Select(productPage.getSizeOption());

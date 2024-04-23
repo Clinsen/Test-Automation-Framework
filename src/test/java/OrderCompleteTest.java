@@ -1,5 +1,8 @@
 import base.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -8,6 +11,7 @@ import org.testng.annotations.Test;
 import pageObjects.*;
 
 import java.io.IOException;
+import java.time.Duration;
 
 @Listeners(resources.Listeners.class)
 
@@ -31,7 +35,18 @@ public class OrderCompleteTest extends BasePage {
     @Test
     public void SimulateOrderingProcess() throws IOException, InterruptedException {
         Homepage home = new Homepage(driver);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         home.getCookie().click();
+
+        if(home.getSidebarInactive().isEnabled()){
+            home.getToggle().click();
+        }
+
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
+
+        wait.until(ExpectedConditions.elementToBeClickable(home.getTestStoreLink()));
         home.getTestStoreLink().click();
 
         StoreHomepage store = new StoreHomepage(driver);
