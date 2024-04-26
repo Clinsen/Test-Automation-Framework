@@ -58,7 +58,7 @@ public class AddRemoveItemBasketTest extends Hooks {
 
         Assert.assertEquals(sCart.getTotalAmountValue().getText(), "$45.24");
 
-        System.out.println("AddRemoveItemBasket test has been simulated successfully.");
+        System.out.println("Add/Remove item test has been simulated.");
         //Thread.sleep(5000);
     }
 }

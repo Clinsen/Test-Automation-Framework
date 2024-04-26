@@ -46,5 +46,8 @@ public class LoginTest extends Hooks {
         lPage.getSubmitBtn().click();
 
         Assert.assertTrue(header.getSignOutBtn().isDisplayed());
+
+        System.out.println("Login test has been simulated.");
+        //Thread.sleep(5000);
     }
 }
