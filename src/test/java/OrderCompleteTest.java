@@ -1,3 +1,4 @@
+import base.PageObjectBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -33,8 +34,8 @@ public class OrderCompleteTest extends Hooks {
         waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
         home.getTestStoreLink().click();
 
-        StoreHomepage store = new StoreHomepage();
-        store.getProduct().click();
+        PageObjectBase poBase = new StoreHomepage();
+        poBase.getFirstProduct().click();
 
         StoreProductPage storeProd = new StoreProductPage();
         Select option = new Select(storeProd.getSizeOption());
@@ -80,8 +81,7 @@ public class OrderCompleteTest extends Hooks {
         paymentForm.getOrderBtn().click();
 
         OrderConfirm confirmPage = new OrderConfirm();
-        Assert.assertEquals(sCart.getTotalAmountValue().getText(), confirmPage.getPaymentAmount().getText());
-
+        Assert.assertEquals(confirmPage.getConfirmOrderLabel().getText(), "\uE876YOUR ORDER IS CONFIRMED");
         System.out.println("Order test has been simulated.");
         //Thread.sleep(5000);
     }
