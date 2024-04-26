@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.time.Duration;
 
+import base.PageObjectBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -34,8 +35,8 @@ public class AddRemoveItemBasketTest extends Hooks {
         waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
         home.getTestStoreLink().click();
 
-        StoreHomepage storeHome = new StoreHomepage();
-        storeHome.getProduct().click();
+        PageObjectBase poBase = new PageObjectBase();
+        poBase.getFirstProduct().click();
 
         StoreProductPage productPage = new StoreProductPage();
         productPage.getQuantityIncreaseBtn().click();

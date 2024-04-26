@@ -1,15 +1,12 @@
 package pageObjects;
 
-import base.BasePage;
+import base.PageObjectBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class ShoppingCart extends BasePage {
-    public WebDriver driver;
-
+public class ShoppingCart extends PageObjectBase {
     public ShoppingCart() throws IOException {
         super();
     }
@@ -54,7 +51,8 @@ public class ShoppingCart extends BasePage {
     }
     public WebElement getTotalAmountValue() throws IOException {
         this.driver = getDriver();
-        return driver.findElement(totalAmountVal); }
+        return driver.findElement(totalAmountVal);
+    }
     public WebElement getRemoveItemBtn(int itemNumber) throws IOException {
         this.driver = getDriver();
         String xpathExpression = String.format(removeItemBtn, itemNumber);
