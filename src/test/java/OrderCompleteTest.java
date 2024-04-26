@@ -82,7 +82,7 @@ public class OrderCompleteTest extends Hooks {
         OrderConfirm confirmPage = new OrderConfirm();
         Assert.assertEquals(sCart.getTotalAmountValue().getText(), confirmPage.getPaymentAmount().getText());
 
-        System.out.println("OrderComplete test has been simulated successfully.");
+        System.out.println("Order test has been simulated.");
         //Thread.sleep(5000);
     }
 }
