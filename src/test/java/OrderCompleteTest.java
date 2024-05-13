@@ -1,3 +1,4 @@
+import base.BaseClass;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -18,11 +19,11 @@ public class OrderCompleteTest extends Hooks {
 
     @Test
     public void SimulateOrderingProcess() throws IOException, InterruptedException {
-        AbstractPage absPage = new AbstractPage();
-        absPage.openWebStore();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Click on the first product
-        absPage.getFirstProduct().click();
+        base.getFirstProduct().click();
 
         // Add parameters
         StoreProductPage storeProd = new StoreProductPage();

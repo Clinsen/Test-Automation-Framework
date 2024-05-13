@@ -1,3 +1,4 @@
+import base.BaseClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -18,8 +19,8 @@ public class LoginTest extends Hooks {
 
     @Test
     public void SimulateLoginProcess() throws IOException, InterruptedException{
-        AbstractPage absPage = new AbstractPage();
-        absPage.openWebStore();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Click on sign in btn
         HeaderElements header = new HeaderElements();

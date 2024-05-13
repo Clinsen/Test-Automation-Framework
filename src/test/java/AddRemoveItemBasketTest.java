@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.time.Duration;
 
+import base.BaseClass;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -19,11 +20,11 @@ public class AddRemoveItemBasketTest extends Hooks {
 
     @Test
     public void addRemoveItem() throws IOException, InterruptedException {
-        AbstractPage absPage = new AbstractPage();
-        absPage.openWebStore();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Click on the first product
-        absPage.getFirstProduct().click();
+        base.getFirstProduct().click();
 
         // Increase the quantity, add it to the cart
         StoreProductPage productPage = new StoreProductPage();

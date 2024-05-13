@@ -1,3 +1,4 @@
+import base.BaseClass;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -19,8 +20,8 @@ public class NavBarFunctionalityTest extends Hooks {
 
     @Test
     public void TestFunctionalityOfTheNavigationBar() throws IOException, InterruptedException{
-        AbstractPage absPage = new AbstractPage();
-        absPage.openWebStore();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Test clothes section
         HeaderElements header = new HeaderElements();
@@ -58,8 +59,8 @@ public class NavBarFunctionalityTest extends Hooks {
         String keysToSend = "hummingbird";
         header.getSearchBar().sendKeys(keysToSend.toLowerCase(), Keys.RETURN);
 
-        actions.moveToElement(absPage.getFirstProduct()).perform();
-        absPage.getQuickView().click();
+        actions.moveToElement(base.getFirstProduct()).perform();
+        base.getQuickView().click();
 
         QuickViewPage qvPage = new QuickViewPage();
         waitForVisibilityOf(qvPage.getItemLabel(), Duration.ofSeconds(10));

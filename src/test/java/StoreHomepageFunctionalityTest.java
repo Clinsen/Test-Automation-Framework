@@ -1,3 +1,4 @@
+import base.BaseClass;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -20,8 +21,8 @@ public class StoreHomepageFunctionalityTest extends Hooks {
 
     @Test
     public void TestFunctionalityOfHomepage() throws IOException, InterruptedException{
-        AbstractPage absPage = new AbstractPage();
-        absPage.openWebStore();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Test the carousel
         StoreHomepage shPage = new StoreHomepage();
