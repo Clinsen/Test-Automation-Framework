@@ -1,12 +1,11 @@
 package pageObjects;
 
-import base.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class StoreContentPanel extends PageObjectBase {
+public class StoreContentPanel extends AbstractPage {
     public StoreContentPanel() throws IOException {
         super();
     }

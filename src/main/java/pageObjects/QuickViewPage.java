@@ -1,12 +1,11 @@
 package pageObjects;
 
-import base.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class QuickViewPage extends PageObjectBase {
+public class QuickViewPage extends AbstractPage {
     public QuickViewPage() throws IOException {
         super();
     }

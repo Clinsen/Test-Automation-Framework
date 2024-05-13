@@ -1,13 +1,12 @@
 package pageObjects;
 
-import base.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.util.List;
 
-public class StoreHomepage extends PageObjectBase {
+public class StoreHomepage extends AbstractPage {
     public StoreHomepage() throws IOException {
         super();
     }

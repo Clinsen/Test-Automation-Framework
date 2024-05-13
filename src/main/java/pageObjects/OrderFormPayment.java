@@ -1,12 +1,11 @@
 package pageObjects;
 
-import base.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class OrderFormPayment extends PageObjectBase {
+public class OrderFormPayment extends AbstractPage {
     public OrderFormPayment() throws IOException {
         super();
     }

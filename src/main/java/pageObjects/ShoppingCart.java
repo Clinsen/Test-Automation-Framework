@@ -1,12 +1,11 @@
 package pageObjects;
 
-import base.PageObjectBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class ShoppingCart extends PageObjectBase {
+public class ShoppingCart extends AbstractPage {
     public ShoppingCart() throws IOException {
         super();
     }
