@@ -26,8 +26,7 @@ public class LoginTest extends Hooks {
         HeaderElements header = new HeaderElements();
         waitForClickabilityOf(header.getSignInBtn(), Duration.ofSeconds(10));
         header.getSignInBtn().click();
-
-        // This data should be hidden, ideally
+        
         // Only for demo purposes
         String login = "testing123@test.com";
         String pass = "Testing!123";
