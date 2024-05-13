@@ -38,8 +38,8 @@ public class OrderCompleteTest extends Hooks {
         home.getTestStoreLink().click();
 
         // Click on the first product
-        PageObjectBase poBase = new StoreHomepage();
-        poBase.getFirstProduct().click();
+        AbstractPage absPage = new StoreHomepage();
+        absPage.getFirstProduct().click();
 
         // Add parameters
         StoreProductPage storeProd = new StoreProductPage();

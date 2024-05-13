@@ -74,9 +74,9 @@ public class NavBarFunctionalityTest extends Hooks {
         String keysToSend = "hummingbird";
         header.getSearchBar().sendKeys(keysToSend.toLowerCase(), Keys.RETURN);
 
-        PageObjectBase poBase = new StoreHomepage();
-        actions.moveToElement(poBase.getFirstProduct()).perform();
-        poBase.getQuickView().click();
+        AbstractPage absPage = new StoreHomepage();
+        actions.moveToElement(absPage.getFirstProduct()).perform();
+        absPage.getQuickView().click();
 
         QuickViewPage qvPage = new QuickViewPage();
         waitForVisibilityOf(qvPage.getItemLabel(), Duration.ofSeconds(10));
