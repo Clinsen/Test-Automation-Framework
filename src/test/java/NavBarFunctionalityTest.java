@@ -21,22 +21,8 @@ public class NavBarFunctionalityTest extends Hooks {
 
     @Test
     public void TestFunctionalityOfTheNavigationBar() throws IOException, InterruptedException{
-        Homepage home = new Homepage();
-
-        // Close the cookie pop-up
-        home.getCookie().click();
-
-        // If the sidebar is invisible to user - open it
-        if (home.getSidebar().getAttribute("class").contains("inactive")){
-            home.getToggle().click();
-        }
-
-        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
-
-        // Go to the web store
-        waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
-        home.getTestStoreLink().click();
+        AbstractPage absPage = new AbstractPage();
+        absPage.openWebStore();
 
         // Test clothes section
         HeaderElements header = new HeaderElements();
@@ -74,7 +60,6 @@ public class NavBarFunctionalityTest extends Hooks {
         String keysToSend = "hummingbird";
         header.getSearchBar().sendKeys(keysToSend.toLowerCase(), Keys.RETURN);
 
-        AbstractPage absPage = new StoreHomepage();
         actions.moveToElement(absPage.getFirstProduct()).perform();
         absPage.getQuickView().click();
 

@@ -20,23 +20,8 @@ public class StoreHomepageFunctionalityTest extends Hooks {
 
     @Test
     public void TestFunctionalityOfHomepage() throws IOException, InterruptedException{
-        Homepage home = new Homepage();
-
-        // Close the cookie pop-up
-        home.getCookie().click();
-
-        // If the sidebar is invisible to user - open it
-        if (home.getSidebar().getAttribute("class").contains("inactive")){
-            home.getToggle().click();
-        }
-
-        // Scroll to the web store hyperlink, click it
-        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
-
-        // Go to the web store
-        waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
-        home.getTestStoreLink().click();
+        AbstractPage absPage = new AbstractPage();
+        absPage.openWebStore();
 
         // Test the carousel
         StoreHomepage shPage = new StoreHomepage();
@@ -70,6 +55,7 @@ public class StoreHomepageFunctionalityTest extends Hooks {
 
         // Scroll to the email field, enter false data
         // Assure that no subscription alerts are displayed
+        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("arguments[0].scrollIntoView()", shPage.getEmailField());
         shPage.getEmailField().sendKeys("wrong data");
         shPage.getSubscribeBtn().click();
