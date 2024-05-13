@@ -46,6 +46,8 @@ public class CreateNewUserTest extends Hooks {
         // Check if we're logged in
         waitForVisibilityOf(header.getSignOutBtn(), Duration.ofSeconds(10));
         Assert.assertTrue(header.getSignOutBtn().isDisplayed());
+
+        System.out.println("Create user test has been simulated.");
         //Thread.sleep(5000);
     }
 }
