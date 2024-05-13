@@ -39,6 +39,7 @@ public class AddRemoveItemBasketTest extends Hooks {
         Select option = new Select(productPage.getSizeOption());
         option.selectByVisibleText("XL");
         waitForStalenessOf(productPage.getAddToCartBtn(), Duration.ofSeconds(10));
+        waitForClickabilityOf(productPage.getAddToCartBtn(), Duration.ofSeconds(10));
         productPage.getAddToCartBtn().click();
 
         // Proceed to checkout page (cart)
