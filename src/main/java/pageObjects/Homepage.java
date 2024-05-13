@@ -1,11 +1,12 @@
 package pageObjects;
 
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class Homepage extends AbstractPage {
+public class Homepage extends BaseClass {
     public Homepage() throws IOException {
         super();
     }

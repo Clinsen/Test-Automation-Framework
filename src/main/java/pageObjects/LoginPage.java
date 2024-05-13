@@ -1,11 +1,12 @@
 package pageObjects;
 
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class LoginPage extends AbstractPage {
+public class LoginPage extends BaseClass {
     public LoginPage() throws IOException {
         super();
     }
