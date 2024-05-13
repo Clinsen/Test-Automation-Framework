@@ -1,5 +1,4 @@
-import base.PageObjectBase;
-import org.openqa.selenium.JavascriptExecutor;
+import base.BaseClass;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -21,22 +20,8 @@ public class NavBarFunctionalityTest extends Hooks {
 
     @Test
     public void TestFunctionalityOfTheNavigationBar() throws IOException, InterruptedException{
-        Homepage home = new Homepage();
-
-        // Close the cookie pop-up
-        home.getCookie().click();
-
-        // If the sidebar is invisible to user - open it
-        if (home.getSidebar().getAttribute("class").contains("inactive")){
-            home.getToggle().click();
-        }
-
-        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
-
-        // Go to the web store
-        waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
-        home.getTestStoreLink().click();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Test clothes section
         HeaderElements header = new HeaderElements();
@@ -74,9 +59,8 @@ public class NavBarFunctionalityTest extends Hooks {
         String keysToSend = "hummingbird";
         header.getSearchBar().sendKeys(keysToSend.toLowerCase(), Keys.RETURN);
 
-        PageObjectBase poBase = new StoreHomepage();
-        actions.moveToElement(poBase.getFirstProduct()).perform();
-        poBase.getQuickView().click();
+        actions.moveToElement(base.getFirstProduct()).perform();
+        base.getQuickView().click();
 
         QuickViewPage qvPage = new QuickViewPage();
         waitForVisibilityOf(qvPage.getItemLabel(), Duration.ofSeconds(10));

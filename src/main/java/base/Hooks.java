@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
 
-public class Hooks extends BasePage{
+public class Hooks extends BaseClass{
     public Hooks() throws IOException {
         super();
     }

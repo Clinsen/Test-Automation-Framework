@@ -1,12 +1,12 @@
 package pageObjects;
 
-import base.PageObjectBase;
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class OrderConfirm extends PageObjectBase {
+public class OrderConfirm extends BaseClass {
     public OrderConfirm() throws IOException {
         super();
     }

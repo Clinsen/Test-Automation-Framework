@@ -1,8 +1,7 @@
 import java.io.IOException;
 import java.time.Duration;
 
-import base.PageObjectBase;
-import org.openqa.selenium.JavascriptExecutor;
+import base.BaseClass;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -21,26 +20,11 @@ public class AddRemoveItemBasketTest extends Hooks {
 
     @Test
     public void addRemoveItem() throws IOException, InterruptedException {
-        Homepage home = new Homepage();
-
-        // Close the cookie pop-up
-        home.getCookie().click();
-
-        // If the sidebar is invisible to user - open it
-        if (home.getSidebar().getAttribute("class").contains("inactive")){
-            home.getToggle().click();
-        }
-
-        JavascriptExecutor jse = (JavascriptExecutor) getDriver();
-        jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
-
-        // Go to the web store
-        waitForClickabilityOf(home.getTestStoreLink(), Duration.ofSeconds(10));
-        home.getTestStoreLink().click();
+        BaseClass base = new BaseClass();
+        base.openWebStore();
 
         // Click on the first product
-        PageObjectBase poBase = new PageObjectBase();
-        poBase.getFirstProduct().click();
+        base.getFirstProduct().click();
 
         // Increase the quantity, add it to the cart
         StoreProductPage productPage = new StoreProductPage();

@@ -1,13 +1,13 @@
 package pageObjects;
 
-import base.PageObjectBase;
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class OrderFormShippingMethod extends PageObjectBase {
+public class OrderFormShippingMethod extends BaseClass {
     public WebDriver driver;
 
     public OrderFormShippingMethod() throws IOException {

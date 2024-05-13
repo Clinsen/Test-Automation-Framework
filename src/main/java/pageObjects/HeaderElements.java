@@ -1,12 +1,12 @@
 package pageObjects;
 
-import base.PageObjectBase;
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
-public class HeaderElements extends PageObjectBase {
+public class HeaderElements extends BaseClass {
     public HeaderElements() throws IOException {
         super();
     }
