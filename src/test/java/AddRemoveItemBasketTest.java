@@ -25,8 +25,7 @@ public class AddRemoveItemBasketTest extends Hooks {
         absPage.openWebStore();
 
         // Click on the first product
-        PageObjectBase poBase = new PageObjectBase();
-        poBase.getFirstProduct().click();
+        absPage.getFirstProduct().click();
 
         // Increase the quantity, add it to the cart
         StoreProductPage productPage = new StoreProductPage();
