@@ -121,6 +121,4 @@ public class BaseClass {
         WebDriverWait wait = new WebDriverWait(getDriver(), timer);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-
-
 }
