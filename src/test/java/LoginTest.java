@@ -1,5 +1,4 @@
 import base.BaseClass;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 
@@ -26,7 +25,7 @@ public class LoginTest extends Hooks {
         HeaderElements header = new HeaderElements();
         waitForClickabilityOf(header.getSignInBtn(), Duration.ofSeconds(10));
         header.getSignInBtn().click();
-        
+
         // Only for demo purposes
         String login = "testing123@test.com";
         String pass = "Testing!123";
